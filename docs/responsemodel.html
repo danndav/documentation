@@ -58,7 +58,7 @@
 
 
     <!-- Main Content -->
-    <main class="main-content">
+   <main class="main-content">
       <div class="container">
         <div class="row">
 
@@ -73,17 +73,12 @@
               <aside class="sidebar sidebar-sticky sidebar-stick-shadow pr-md-5 br-1">
                 <ul class="nav nav-sidebar nav-sidebar-hero" data-accordion="true">
                   <li class="nav-item">
-                    <a class="nav-link active" href="#">Getting started <i class="nav-angle"></i></a>
-                    <div class="nav">
-                      <a class="nav-link active" href="kb-introduction.html">Introduction</a>
-                      <a class="nav-link" href="kb-contents.html">Contents</a>
-                      <a class="nav-link" href="kb-basic-starter.html">Basic starter</a>
-                      <a class="nav-link" href="kb-expert-starter.html">Expert starter</a>
-                    </div>
+                    <a class="nav-link active" href="#">Getting started </a>
+                    
                   </li>
   
                   <li class="nav-item">
-                    <a class="nav-link" href="availableservice.html">Available Services</a>
+                    <a class="nav-link" href="../index.html">Available Services</a>
                   </li>
   
                   <li class="nav-item">
@@ -128,7 +123,7 @@
                 </ul>
               </aside>
             </div>
-  
+   
 
           <!--
           |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
@@ -137,25 +132,47 @@
           !-->
           <div class="col-md-7 col-xl-8 ml-md-auto py-8">
             <article>
-              <h1>Available Services</h1>
-             
-              <hr>
+
+                <h1>Response Model</h1>
+                <p class="lead">This services takes a general model for response to all request as explained in the table below.</p>
+
+              <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Parameter name</th>
+                      <th>Type</th>
+                      <th>Mandatory(M)/Optional(O)</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>id</th>
+                      <td>String</td>
+                      <td>M</td>
+                      <td>Response Code (Refer to Response Code of this document)</td>
+                    </tr>
+                    <tr>
+                      <th >Message</th>
+                      <td>String</td>
+                      <td>M</td>
+                      <td>Response Message</td>
+                    </tr>
+                    <tr>
+                      <th >Object</th>
+                      <td>Composite Objec</td>
+                      <td>M</td>
+                      <td>This is a Json Object based on the service requested. It carries the main information returned for the request made.</td>
+                    </tr>
+                  </tbody>
+                </table>
+  
+
+            </article>
+          </div>
 
 
-              
-              
-              
-              <ul>
-                <li>GOTV</li>
-                <li>Startimes</li>
-                <li>Airtime</li>
-                <li>IKEDC Prepaid Token Generation</li>
-                <li>IKEDC Postpaid Subscription</li>
-                <li>EKEDC Prepaid Token Generation</li>
-                <li>EKEDC PostPaid Generation</li>
-                <li>Fund Transfern</li>
-              </ul>
-             
+
         </div>
       </div>
     </main><!-- /.main-content -->
@@ -189,5 +206,5 @@
 
   </body>
 
-<!-- Mirrored from thetheme.io/thedocs/docs/typography.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Nov 2018 11:17:07 GMT -->
+<!-- Mirrored from thetheme.io/thedocs/docs/table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Nov 2018 11:18:11 GMT -->
 </html>
