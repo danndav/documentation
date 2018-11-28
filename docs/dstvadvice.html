@@ -101,7 +101,7 @@
                     <a class="nav-link" href="#">GOTV Services <i class="nav-angle"></i></a>
                     <div class="nav">
                       <a class="nav-link" href="gotvproduct.html">GOTV PRODUCT</a>
-                      <a class="nav-link" href="gotvadson.html">GOTV ADD-ONS</a>
+                      
                       <a class="nav-link" href="gotvvalidation.html">GOTV CARD VALIDATION</a>
                       <a class="nav-link" href="gotvadvice.html">GOTV ADVICE (subscription)</a>
                       <a class="nav-link" href="gotvquery.html">GOTV QUERY</a>
@@ -118,10 +118,23 @@
                        
                       </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="airtime.html">AIRTIME VENDING</a>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="security.html">SECURITY</a>
+                        
+                      </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="responsecode.html">RESPONSE CODE</a>
+                        
+                      </li>
 
               </ul>
             </aside>
           </div>
+
 
 
           <!--
@@ -136,6 +149,23 @@
                 <p class="lead">This is used to subscribe for the DSTV service. It is advised that at this level, the customer details and the plan to subscribe for must have been validated before this endpoint is initiated.</p>
 
                 <br>
+                <br>
+
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                        <th>URL</th>
+                        <th>http://178.62.86.202:1905/api/dstv/advice</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <td>METHOD</th>
+                        <td>POST</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br><br>
 
                 <table class="table">
                   <thead class="thead-light">
@@ -148,7 +178,7 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>cardNumber/th>
+                      <td>cardNumber</th>
                       <td>String</td>
                       <td>M</td>
                       <td>The smart card number</td>
@@ -167,13 +197,13 @@
                       <td>The major product plan to subscribe for</td>
                    </tr>
                   <tr>
-                   <th >productCode/th>
+                   <th >productCode</th>
                     <td>list</td>
                     <td>O</td>
                     <td>List of add-ons codes to add to the product subscribed for</td>
                    </tr>
                   <tr>
-                    <th >Amount/th>
+                    <th >Amount</th>
                     <td>Number</td>
                     <td>M</td>
                     <td>The sum total amount of the plans and add-ons subscribed for</td>
@@ -254,7 +284,7 @@
                    <th >Message</th>
                     <td>String</td>
                     <td>O</td>
-                    <td>Error message/td>
+                    <td>Error message</td>
                    </tr>
                   <tr>
                     <th >uniqueId</th>
@@ -304,7 +334,7 @@
                <th >errorCode</th>
                 <td>String</td>
                 <td>O</td>
-                <td>Error code/td>
+                <td>Error code</td>
                </tr>
               <tr>
                 <th >errorId</th>
@@ -417,5 +447,5 @@
 
   </body>
 
-<!-- Mirrored from thetheme.io/thedocs/docs/table.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 27 Nov 2018 11:18:11 GMT -->
+
 </html>

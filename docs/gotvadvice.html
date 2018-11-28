@@ -137,7 +137,6 @@
 
 
 
-
           <!--
           |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
           | Content
@@ -146,56 +145,110 @@
           <div class="col-md-7 col-xl-8 ml-md-auto py-8">
             <article>
 
-                <h1>DSTV Services</h1>
-                <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
+                <h1>GOTV ADVICE (SUBSCRIPTION)</h1>
+                <p class="lead">This is used to subscribe for the DSTV service. It is advised that at this level, the customer details and the plan to subscribe for must have been validated before this endpoint is initiated.</p>
 
+                <br>
+                <br>
+                <table class="table">
+                        <thead class="thead-light">
+                            <tr>
+                            <th>URL</th>
+                            <th>http://178.62.86.202:1905/api/gotv/advice</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                            <td>METHOD</th>
+                            <td>POST</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 <br><br>
-                <h1>DSTV PRODUCTS</h1>
-                <p class="lead">This is used to fetch the available DSTV products. It comes along with the price, name, code and invoice period.</p>
 
-
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                <th>URL</th>
-                <th>http://178.62.86.202:1905/api/dstv/products</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>METHOD</th>
-                <td>GET</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <br>
-        <br>
-        <br>
-
-        <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
-        <table class="table">
-                <thead class="thead-light">
+                <table class="table">
+                  <thead class="thead-light">
                     <tr>
-                    <th>Parameter</th>
-                    <td>Type</th>
-                    <td>Mandatory(M)/Optional(O)</td>
-                    <th>Description</th>
+                      <th>Parameter</th>
+                      <th>Type</th>
+                      <th>Mandatory(M)/Optional(O)</th>
+                      <th>Description</th>
                     </tr>
-                </thead>
-                <tbody>
+                  </thead>
+                  <tbody>
                     <tr>
-                    <td>items</th>
-                    <td>List(Array)</td>
-                    <td>M</th>
-                    <td>A list of the available services</td>
+                      <td>cardNumber</th>
+                      <td>String</td>
+                      <td>M</td>
+                      <td>The smart card number</td>
+                      </tr>
+                      
+                    <tr>
+                      <th >customerNumber</th>
+                      <td>Number</td>
+                      <td>M</td>
+                      <td>The customer’s number fetched from smart card validation</td>
                     </tr>
-                </tbody>
-            </table>
+                    <tr>
+                    <th >code</th>
+                      <td>String</td>
+                      <td>M</td>
+                      <td>The major product plan to subscribe for</td>
+                   </tr>
+                  
+                  <tr>
+                    <th >Amount</th>
+                    <td>Number</td>
+                    <td>M</td>
+                    <td>The sum total amount of the plans and add-ons subscribed for</td>
+                   </tr>
+                    <th >customerName</th>
+                        <td>String</td>
+                        <td>M</td>
+                        <td>The First name concatenated with the Last name of the customer</td>
+                    </tr>
+                    
+                    <th >invoicePeriod</th>
+                        <td>Number</td>
+                        <td>M</td>
+                        <td>Invoice period subscribed for (1 or 12)</td>
+                    </tr>
+                     <tr>
+                    <th >uniqueId</th>
+                        <td>Number</td>
+                        <td>M</td>
+                        <td>A Unique id attached to the request for query</td>
+                    </tr>
+                     
+                   
+                   
+                  </tbody>
+                </table>
+  
+        <br><br>
+        <div class="code-highlight ">
+                <span class="js-copy-to-clipboard copy-code"></span>
+            <pre><code class="language-javascript js-code">
+                    Sample Request {
+                        "cardNumber":"2003661753",
 
-<br><br><br>
+                        "code":"GOLITE",
+                        
+                        "amount":350,
+                        
+                        "customerName":"Sten Mockett",
+                        
+                        "invoicePeriod": 1,
+                        
+                        "uniqueId":12345654321
+                    }
+                   
+             </code>  </pre></div>
+            <br><br>
 
-              <table class="table">
+        <p class="lead">Response Body: object’s Parameter</p>
+            
+            <table class="table">
                   <thead class="thead-light">
                     <tr>
                       <th>Parameter</th>
@@ -208,73 +261,152 @@
                     <tr>
                       <td>Code</th>
                       <td>String</td>
-                      <td>M</td>
-                      <td>Product Plan code</td>
-                    </tr>
+                      <td>O</td>
+                      <td>Error code</td>
+                      </tr>
+                      
                     <tr>
-                      <th >invoicePeriods</th>
-                      <td>list</td>
-                      <td>M</td>
-                      <td>1 or 12</td>
-                    </tr>
-                    <tr>
-                      <th >Price</th>
-                      <td>Number</td>
-                      <td>M</td>
-                      <td>Plan Price</td>
-                    </tr>
-                    <tr>
-                    <th >Name</th>
+                      <th >transactionNumber</th>
                       <td>String</td>
                       <td>M</td>
-                      <td>Plan Name</td>
+                      <td>Transaction Number</td>
+                    </tr>
+                    <tr>
+                    <th >Details</th>
+                      <td>Composite Object</td>
+                      <td>M</td>
+                      <td>Composite object containing details of transaction</td>
                    </tr>
-                   <th >Description</th>
-                   <td>String</td>
-                   <td>O</td>
-                   <td>Plan Description</td>
-                </tr>
+                  <tr>
+                   <th >Message</th>
+                    <td>String</td>
+                    <td>O</td>
+                    <td>Error message</td>
+                   </tr>
+                  <tr>
+                    <th >uniqueId</th>
+                    <td>Number</td>
+                    <td>M</td>
+                    <td>The Unique Id sent along with the request</td>
+                   </tr>
+                    
+                 
                   </tbody>
                 </table>
   
-                    <br><br><br>
+                    <br><br>
+
+        <p class="lead">Response Body: details' Parameter</p>
+            
+        <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Mandatory(M)/Optional(O)</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>customerCareReferenceId</th>
+                  <td>Number</td>
+                  <td>O</td>
+                  <td>Customer Care Reference Id</td>
+                  </tr>
+                  
+                <tr>
+                  <th >exchangeReference</th>
+                  <td>Number</td>
+                  <td>M</td>
+                  <td>Exchange Reference</td>
+                </tr>
+                <tr>
+                <th >errorMessage</th>
+                  <td>String</td>
+                  <td>O</td>
+                  <td>Error Message</td>
+               </tr>
+              <tr>
+               <th >errorCode</th>
+                <td>String</td>
+                <td>O</td>
+                <td>Error code</td>
+               </tr>
+              <tr>
+                <th >errorId</th>
+                <td>String</td>
+                <td>M</td>
+                <td>Error Id</td>
+               </tr>
+               <tr>
+                <th >auditReferenceNumber</th>
+                <td>String</td>
+                <td>M</td>
+                <td>Audit Number</td>
+               </tr>
+               <tr>
+                <th >Done</th>
+                <td>String</td>
+                <td>M</td>
+                <td>Status</td>
+               </tr>
+               <tr>
+                <th >Status</th>
+                <td>String</td>
+                <td>M</td>
+                <td>Status</td>
+               </tr>
+                
+             
+              </tbody>
+            </table>
+            <br><br>
 
 
     <div class="code-highlight ">
             <span class="js-copy-to-clipboard copy-code"></span>
         <pre><code class="language-javascript js-code">
-        Sample Response{
+                Sample Response
 
-            "id": "00",
-            "message": "Success",                            
-            "object": {                           
-                    "items": [          
-                        {
-                        "code": "ACSSE36",           
-                        "invoicePeriods": [      
-                            1,          
-                            12                           
-                            ], 
-                            "price": 1800,            
-                            "name": "DStv Access",            
-                            "description": " "  
-                        },
-                        {
-                            "code": "COFAME36",
-                            "invoicePeriods": [
-                                1,
-                                12                                                  
-                            ],
-                            "price": 3600,
-                            "name": "DStv Family",
-                            "description": " "
-                        }
-
-                        ]
-
-                    }
-
+                {
+                
+                "id": "00",
+                
+                "message": "Success",
+                
+                "object": {
+                
+                "code": null,
+                
+                "transactionNumber": 7932,
+                
+                "details": {
+                
+                "customerCareReferenceId": null,
+                
+                "exchangeReference": "-1850258417",
+                
+                "errorMessage": null,
+                
+                "errorCode": null,
+                
+                "errorId": null,
+                
+                "auditReferenceNumber": "00819397359489063912",
+                
+                "done": true,
+                
+                "status": "ACCEPTED"
+                
+                },
+                
+                "message": null,
+                
+                "uniqueId": 12345654321
+                
                 }
+          }
                       </code>  </pre></div>
 
 
@@ -309,5 +441,6 @@
     <script src="../assets/js/script.js"></script>
 
   </body>
+
 
 </html>

@@ -136,8 +136,6 @@
           </div>
 
 
-
-
           <!--
           |‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒‒
           | Content
@@ -146,56 +144,13 @@
           <div class="col-md-7 col-xl-8 ml-md-auto py-8">
             <article>
 
-                <h1>DSTV Services</h1>
-                <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
+                <h1>STARTIMES QUERY</h1>
+                <p class="lead">This is used to check the status of a transaction</p>
 
-                <br><br>
-                <h1>DSTV PRODUCTS</h1>
-                <p class="lead">This is used to fetch the available DSTV products. It comes along with the price, name, code and invoice period.</p>
+                <br>
+                <br>
 
-
-        <table class="table">
-            <thead class="thead-light">
-                <tr>
-                <th>URL</th>
-                <th>http://178.62.86.202:1905/api/dstv/products</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <td>METHOD</th>
-                <td>GET</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <br>
-        <br>
-        <br>
-
-        <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
-        <table class="table">
-                <thead class="thead-light">
-                    <tr>
-                    <th>Parameter</th>
-                    <td>Type</th>
-                    <td>Mandatory(M)/Optional(O)</td>
-                    <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>items</th>
-                    <td>List(Array)</td>
-                    <td>M</th>
-                    <td>A list of the available services</td>
-                    </tr>
-                </tbody>
-            </table>
-
-<br><br><br>
-
-              <table class="table">
+                <table class="table">
                   <thead class="thead-light">
                     <tr>
                       <th>Parameter</th>
@@ -206,76 +161,102 @@
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Code</th>
-                      <td>String</td>
-                      <td>M</td>
-                      <td>Product Plan code</td>
+                    <th >Id</th>
+                    <td>Number</td>
+                    <td>M</td>
+                    <td>The Unique Id for the request you wish to query</td>
                     </tr>
-                    <tr>
-                      <th >invoicePeriods</th>
-                      <td>list</td>
-                      <td>M</td>
-                      <td>1 or 12</td>
-                    </tr>
-                    <tr>
-                      <th >Price</th>
-                      <td>Number</td>
-                      <td>M</td>
-                      <td>Plan Price</td>
-                    </tr>
-                    <tr>
-                    <th >Name</th>
-                      <td>String</td>
-                      <td>M</td>
-                      <td>Plan Name</td>
-                   </tr>
-                   <th >Description</th>
-                   <td>String</td>
-                   <td>O</td>
-                   <td>Plan Description</td>
-                </tr>
+                     
+                   
+                   
                   </tbody>
                 </table>
   
-                    <br><br><br>
-
-
-    <div class="code-highlight ">
-            <span class="js-copy-to-clipboard copy-code"></span>
-        <pre><code class="language-javascript js-code">
-        Sample Response{
-
-            "id": "00",
-            "message": "Success",                            
-            "object": {                           
-                    "items": [          
-                        {
-                        "code": "ACSSE36",           
-                        "invoicePeriods": [      
-                            1,          
-                            12                           
-                            ], 
-                            "price": 1800,            
-                            "name": "DStv Access",            
-                            "description": " "  
-                        },
-                        {
-                            "code": "COFAME36",
-                            "invoicePeriods": [
-                                1,
-                                12                                                  
-                            ],
-                            "price": 3600,
-                            "name": "DStv Family",
-                            "description": " "
+        <br><br>
+        <div class="code-highlight ">
+                <span class="js-copy-to-clipboard copy-code"></span>
+            <pre><code class="language-javascript js-code">
+                    Sample Request {
+                        "id":1508341644
                         }
+                   
+             </code>  </pre></div>
+            <br><br>
 
-                        ]
+        <p class="lead">Response Body: object’s Parameter</p>
+            
+            <table class="table">
+                  <thead class="thead-light">
+                    <tr>
+                      <th>Parameter</th>
+                      <th>Type</th>
+                      <th>Mandatory(M)/Optional(O)</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
 
-                    }
+                  <tr>
+                   <th >Message</th>
+                    <td>String</td>
+                    <td>O</td>
+                    <td>Error message</td>
+                   </tr>
+                  <tr>
+                    <tr>
+                      <td>Code</th>
+                      <td>String</td>
+                      <td>O</td>
+                      <td>Error code</td>
+                      </tr>
+                      
+                    <tr>
+                      <th >transactionNumber</th>
+                      <td>String</td>
+                      <td>M</td>
+                      <td>Transaction Number</td>
+                    </tr>
 
-                }
-                      </code>  </pre></div>
+                    <th >uniqueId</th>
+                    <td>Number</td>
+                    <td>M</td>
+                    <td>The unique id attached to the request</td>
+                   </tr>
+                    
+                   <tr>
+                    <th >Details</th>
+                      <td>Composite Object</td>
+                      <td>M</td>
+                      <td>Composite Object that contains the details of the transaction</td>
+                   </tr>
+                  </tbody>
+                </table>
+  
+                    <br><br>
+
+        <p class="lead">Response Body: details' Parameter</p>
+            
+        <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th>Parameter</th>
+                  <th>Type</th>
+                  <th>Mandatory(M)/Optional(O)</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  </tr>
+                  
+             
+              </tbody>
+            </table>
+            <br><br>
 
 
             </article>
@@ -309,5 +290,6 @@
     <script src="../assets/js/script.js"></script>
 
   </body>
+
 
 </html>

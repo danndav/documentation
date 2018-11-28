@@ -136,6 +136,7 @@
           </div>
 
 
+    
 
 
           <!--
@@ -146,19 +147,19 @@
           <div class="col-md-7 col-xl-8 ml-md-auto py-8">
             <article>
 
-                <h1>DSTV Services</h1>
-                <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
+                <h1>GOTV Services</h1>
+                <p class="lead">This service is intended for the subscription of MultiChoice GOTV cable plans.</p>
 
                 <br><br>
-                <h1>DSTV PRODUCTS</h1>
-                <p class="lead">This is used to fetch the available DSTV products. It comes along with the price, name, code and invoice period.</p>
+                <h1>GOTV PRODUCTS</h1>
+                <p class="lead">This is used to fetch the available GOTV products. It comes along with the price, name, code and invoice period.</p>
 
 
         <table class="table">
             <thead class="thead-light">
                 <tr>
                 <th>URL</th>
-                <th>http://178.62.86.202:1905/api/dstv/products</th>
+                <th>http://178.62.86.202:1905/api/gotv/products</th>
                 </tr>
             </thead>
             <tbody>
@@ -173,7 +174,7 @@
         <br>
         <br>
 
-        <p class="lead">This service is intended for the subscription of MultiChoice DSTV cable plans.</p>
+        <p class="lead">Response Body: object’s Parameter:</p>
         <table class="table">
                 <thead class="thead-light">
                     <tr>
@@ -250,23 +251,26 @@
             "object": {                           
                     "items": [          
                         {
-                        "code": "ACSSE36",           
-                        "invoicePeriods": [      
+                            "code": "GOtvMax",
+
+                            "invoicePeriods": [     
                             1,          
                             12                           
                             ], 
-                            "price": 1800,            
-                            "name": "DStv Access",            
-                            "description": " "  
-                        },
+                                "price": 3800,
+
+                                "name": "GOtv Max",
+                                
+                                "description": " " 
+                            },
                         {
-                            "code": "COFAME36",
+                            "code": "GOTV",
                             "invoicePeriods": [
                                 1,
                                 12                                                  
                             ],
-                            "price": 3600,
-                            "name": "DStv Family",
+                            "price": 1200,
+                            "name": "GOtv Family",
                             "description": " "
                         }
 
@@ -309,5 +313,4 @@
     <script src="../assets/js/script.js"></script>
 
   </body>
-
 </html>
