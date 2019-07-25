@@ -125,12 +125,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="security.html">SECURITY</a>
                         
-                      </li>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="responsecode.html">RESPONSE CODE</a>
                         
-                      </li>
-                      
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="purse.html">PURSE</a>                        
                     </li>
@@ -138,7 +137,6 @@
               </ul>
             </aside>
           </div>
-
 
 
           <!--
@@ -149,243 +147,52 @@
           <div class="col-md-7 col-xl-8 ml-md-auto py-8">
             <article>
 
-                <h1>STARTTIMES ADVICE</h1>
-                <p class="lead">This is used to subscribe for the startimes service. This actually credits the starttimes account onl.</p>
-
-                <br>
-                <br>
-
+                <h1>Purse Services</h1>
+                <p class="lead">This service is intended for checking your purse balance and fetching transaction history</p>
                 <table class="table">
                     <thead class="thead-light">
                         <tr>
                         <th>URL</th>
-                        <th>https://billpayment.paypad.com.ng/api/startimes/advice</th>
+                        <th>https://billpayment.paypad.com.ng/api/wallet/balance</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                         <td>METHOD</th>
-                        <td>POST</td>
+                        <td>GET</td>
                         </tr>
                     </tbody>
                 </table>
-                <br><br>
+                <br>
+                <br>
+                
+        <p class="lead">Response Body:</p>
+            
+                    <br><br>
 
-                <table class="table">
-                  <thead class="thead-light">
-                    <tr>
-                      <th>Parameter</th>
-                      <th>Type</th>
-                      <th>Mandatory(M)/Optional(O)</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>smartCardNumber</th>
-                      <td>String</td>
-                      <td>M</td>
-                      <td>Smart-card number to be recharged</td>
-                      </tr>
-                      
-                    <tr>
-                      <th >amount</th>
-                      <td>Number</td>
-                      <td>M</td>
-                      <td>Amount to recharge the account</td>
-                    </tr>
-                    <tr>
-                    <th >code</th>
-                      <td>String</td>
-                      <td>M</td>
-                      <td>The major product plan to subscribe for</td>
-                   </tr>
-                  <tr>
-                   <th >productCode</th>
-                    <td>list</td>
-                    <td>O</td>
-                    <td>List of add-ons codes to add to the product subscribed for</td>
-                   </tr>
-                  <tr>
-                    <th >Amount</th>
-                    <td>Number</td>
-                    <td>M</td>
-                    <td>The sum total amount of the plans and add-ons subscribed for</td>
-                   </tr>
-                  
-                    <th >uniqueId</th>
-                        <td>Number</td>
-                        <td>M</td>
-                        <td>Unique id to be used in query</td>
-                    </tr>
-                     
-                   
-                   
-                  </tbody>
-                </table>
-  
-        <br><br>
         <div class="code-highlight ">
                 <span class="js-copy-to-clipboard copy-code"></span>
             <pre><code class="language-javascript js-code">
-                    Sample Request {
-                        "smartCardNumber":"02146409292",
+                    Sample Response
 
-                        "amount":10,
-                        
-                        "uniqueId":7878787898
-                        }
-                   
-             </code>  </pre></div>
-            <br><br>
-
-        <p class="lead">Response Body: object’s Parameter</p>
-            
-            <table class="table">
-                  <thead class="thead-light">
-                    <tr>
-                      <th>Parameter</th>
-                      <th>Type</th>
-                      <th>Mandatory(M)/Optional(O)</th>
-                      <th>Description</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Code</th>
-                      <td>String</td>
-                      <td>O</td>
-                      <td>Error code</td>
-                      </tr>
-                      
-                    <tr>
-                      <th >transactionNumber</th>
-                      <td>String</td>
-                      <td>M</td>
-                      <td>Transaction Number</td>
-                    </tr>
-                    <tr>
-                    <th >Details</th>
-                      <td>Composite Object</td>
-                      <td>M</td>
-                      <td>Composite Object that contains the details of the transaction</td>
-                   </tr>
-                  <tr>
-                   <th >Message</th>
-                    <td>String</td>
-                    <td>O</td>
-                    <td>Error message</td>
-                   </tr>
-                  <tr>
-                    <th >uniqueId</th>
-                    <td>Number</td>
-                    <td>M</td>
-                    <td>Unique id to be used in query</td>
-                   </tr>
+                    Response:
                     
-                 
-                  </tbody>
-                </table>
-  
-                    <br><br>
-
-        <p class="lead">Response Body: details' Parameter</p>
-            
-        <table class="table">
-              <thead class="thead-light">
-                <tr>
-                  <th>Parameter</th>
-                  <th>Type</th>
-                  <th>Mandatory(M)/Optional(O)</th>
-                  <th>Description</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>returnCode</th>
-                  <td>String</td>
-                  <td>M</td>
-                  <td>Provider’s Response Code</td>
-                  </tr>
-                  
-                <tr>
-                  <th >exchangeReference</th>
-                  <td>Number</td>
-                  <td>M</td>
-                  <td>Exchange Reference Number</td>
-                </tr>
-                <tr>
-                <th >returnMessage</th>
-                  <td>String</td>
-                  <td>O</td>
-                  <td>Provider’s Response Message</td>
-               </tr>
-             
-              
-               <tr>
-                <th >Status</th>
-                <td>String</td>
-                <td>M</td>
-                <td>Status of the transaction</td>
-               </tr>
-                
-             
-              </tbody>
-            </table>
-            <br><br>
-
-
-    <div class="code-highlight ">
-            <span class="js-copy-to-clipboard copy-code"></span>
-        <pre><code class="language-javascript js-code">
-                Sample Response
-
-                {
-                
-                "id": "00",
-                
-                "message": "Success",
-                
-                "object": {
-                
-                "code": null,
-                
-                "transactionNumber": 7931,
-                
-                "details": {
-                
-                "returnCode": "0",
-                
-                "exchangeReference": "1699703335",
-                
-                "returnMessage": "succeeded, smart card 02146409292,mobile phone 0,amount NGN 10.0,transaction id 1699703335. Enjoy LIVE Bundesliga/SeriaA, AMC Movies, Nickelodeon and much more. Helpline:094618888",
-                
-                "status": "ACCEPTED"
-                
-                },
-                
-                "message": null,
-                
-                "uniqueId": 7878787898
-                
-                }
-                
-                }
-                      </code>  </pre></div>
-
+                    {
+                        "balance": 98236,
+                        "responseCode": "00",
+                        "responseMessage": "Success"
+                    }
+             </code>  </pre></div>
 
             </article>
           </div>
-
-
-
         </div>
       </div>
     </main><!-- /.main-content -->
 
 
     <!-- Footer -->
-    < <footer class="footer">
+    <footer class="footer">
       <div class="container">
         <div class="row gap-y align-items-center">
 
